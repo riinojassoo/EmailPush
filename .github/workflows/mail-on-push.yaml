@@ -12,7 +12,9 @@ jobs:
           password: ${{secrets.MAIL_PASSWORD}}
           subject: "Send Mail"
           body: |
-          tuvipost on kiirem, aga kommiti tegi ${{github.event.pusher.name}} repost
-          ${{github.repository}} sõnumiga ${{github.event.head_commit.message}}
+          tuvipost on kiirem, aga kommiti tegi 
+          ${{github.event.pusher.name}} repost
+          ${{github.repository}} sõnumiga 
+          ${{github.event.head_commit.message}}
         to: riinojassoo@gmail.com
         from: "Github actions"
