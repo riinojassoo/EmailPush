@@ -5,13 +5,14 @@ jobs:
     steps:
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
-        with:
+        with: 
           server_address: smtp.gmail.com
           server_port: 587
           username: ${{secrets.MAIL_USERNAME}}
           password: ${{secrets.MAIL_PASSWORD}}
-          subject: Send Mail
-          body: "tuvipost on kiirem, aga kommiti tegi ${{github.event.pusher.name}} repost
-          ${{github.repository}} sõnumiga ${{github.event.head_commit.message}}"
-          to: riinojassoo@gmail.com
-          from: Github actions
+          subject: "Send Mail"
+          body: |
+          tuvipost on kiirem, aga kommiti tegi ${{github.event.pusher.name}} repost
+          ${{github.repository}} sõnumiga ${{github.event.head_commit.message}}
+        to: riinojassoo@gmail.com
+        from: "Github actions"
